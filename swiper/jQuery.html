@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="./js/jquery-3.7.1.min.js"></script>
+        <link rel="stylesheet" href="./icons/iconfont.css">
+        <style>
+                #container {
+                        width: 1226px;
+                        height: 460px;
+                        margin: 0 auto;
+                        position: relative;
+                }
+
+                div img {
+                        display: none;
+                        width: 1226px;
+                        height: 460px;
+                        position: absolute;
+                        opacity: 0;
+                }
+
+                div .image {
+                        display: block;
+                        opacity: 1;
+                        cursor: pointer;
+                }
+
+                #container .iconfont {
+                        position: absolute;
+                }
+
+                #container .left {
+                        top: 205px;
+                        left: 0;
+                        font-size: 50px;
+                        color: rgba(128, 128, 128, 0.5);
+                        cursor: pointer;
+                }
+
+                #container .right {
+                        top: 205px;
+                        left: 1176px;
+                        font-size: 50px;
+                        color: rgba(128, 128, 128, 0.5);
+                        cursor: pointer;
+                }
+        </style>
+</head>
+
+<body>
+
+        <div id="container">
+                <img src="./images/1.jpg" alt="xiaomi" class="image">
+                <img src="./images/2.webp" alt="xiaomi">
+                <img src="./images/3.webp" alt="xiaomi">
+                <img src="./images/4.webp" alt="xiaomi">
+                <img src="./images/5.webp" alt="xiaomi">
+                <img src="./images/6.webp" alt="xiaomi">
+                <div class="iconfont left">&#xe635;</div>
+                <div class="iconfont right">&#xe641;</div>
+        </div>
+
+
+
+        <script>
+
+                var a = 0;
+                $(".left").on("click", function () {
+                        $("#container img").eq(a).animate({
+                                opacity: 0,
+                        }, 500);
+                        $("#container img").attr("class", "");
+                        a = a - 1;
+                        if (a < 0) {
+                                a = $("#container img").length - 1;
+                        }
+
+                        $("#container img").eq(a).animate({
+                                opacity: 1,
+                        }, 500);
+                        $("#container img").eq(a).attr("class", "image");
+                });
+
+                $(".right").on("click", function () {
+                        $("#container img").eq(a).animate({
+                                opacity: 0,
+                        }, 500);
+                        $("#container img").attr("class", "");
+                        a = a + 1;
+                        if (a > $("#container img").length - 1) {
+                                a = 0;
+                        }
+                        $("#container img").eq(a).animate({
+                                opacity: 1,
+                        }, 500);
+                        $("#container img").eq(a).attr("class", "image");
+                });
+
+
+                var leftRun = function () {
+                        $("#container img").eq(a).animate({
+                                opacity: 0,
+                        }, 2000);
+                        $("#container img").attr("class", "");
+                        a = a + 1;
+                        if (a > $("#container img").length - 1) {
+                                a = 0;
+                        }
+                        $("#container img").eq(a).animate({
+                                opacity: 1,
+                        }, 2000);
+                        $("#container img").eq(a).attr("class", "image");
+                }
+                //  设置一个定时器 随时改变状态
+                var timer = setInterval(leftRun, 5000);
+
+                //  注意一个细节，鼠标移入到轮播图上的时候，图片永远不会改变
+                $("#container img").on("mouseenter", function () {
+                        clearInterval(timer);
+                });
+                //  鼠标移出的时候，还原
+                $("#container img").on("mouseleave", function () {
+                        timer = setInterval(leftRun, 5000);
+                });
+
+                // //  别忘了设置箭头的特效
+                $(".left").on("mouseenter", function () {
+                        $(".left").css({
+                                "color": "white",
+                                "backgroundColor": "rgba(128,128,128,0.5)",
+                        });
+                })
+                $(".left").on("mouseleave", function () {
+                        $(".left").css({
+                                "color": "rgba(128,128,128,0.5)",
+                                "backgroundColor": "",
+                        });
+                })
+                $(".right").on("mouseenter", function () {
+                        $(".right").css({
+                                "color": "white",
+                                "backgroundColor": "rgba(128,128,128,0.5)",
+                        });
+                })
+                $(".right").on("mouseleave", function () {
+                        $(".right").css({
+                                "color": "rgba(128,128,128,0.5)",
+                                "backgroundColor": "",
+                        });
+                })
+
+        </script>
+
+
+</body>
+
+</html>
