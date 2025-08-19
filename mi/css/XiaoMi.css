@@ -1,0 +1,1237 @@
+body {
+    background-color: #f0f0f0;
+
+}
+
+/* 头部开始 */
+.header {
+    width: 100%;
+    height: 96px;
+    /* 
+        超出部分隐藏不要忘记写
+            防止长度过长导致图片那一块底部出现滑动块       
+     */
+    overflow: hidden;
+    /* img要相对于父容器定位，这里要加相对定位 */
+    position: relative;
+}
+
+.header a img {
+    height: 96px;
+
+    position: absolute;
+    /* 调整img标签左边位置未父容器的中间 */
+    left: 50%;
+    /* 回调img的中心点与父容器中心点对齐 */
+    transform: translate(-50%);
+}
+
+/* 头部结束 */
+
+
+
+
+
+
+
+
+/* 黑色导航栏开始 */
+
+.black-nav {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(51, 51, 51);
+}
+
+.black-nav-container {
+    width: 1226px;
+    height: 40px;
+    margin: 0 auto;
+
+
+}
+
+.b-n-l-left {
+    /* 父元素 左侧导航栏居左浮动 */
+    float: left;
+}
+
+.b-n-l-right {
+    /* * 父元素 右侧导航栏居右浮动 */
+    float: right;
+
+}
+
+.black-nav-container li {
+    /* li标签全部左浮动，基于父元素，右侧左浮动只能呆在右侧 */
+    float: left;
+    height: 40px;
+    line-height: 40px;
+
+}
+
+.black-nav-container li a {
+    font-size: 12px;
+    color: rgb(176, 176, 176);
+}
+
+.black-nav-container li a:hover {
+    color: white;
+}
+
+.black-nav-container li .v-line {
+    color: rgba(176, 176, 176, 0.18);
+    margin: 0 3.6px;
+}
+
+/* 下载app 的div */
+.download {
+    text-align: center;
+    width: 124px;
+    /* 这里最后吧高度改成0 可以做淡入动画 */
+    height: 0;
+    /* 超出部分隐藏 */
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 1px 5px #aaa;
+    position: absolute;
+
+    left: 50%;
+    margin-left: -62px;
+    /* 紧贴导航 */
+    top: 40px;
+
+    /* 做个动画 */
+    transition: all 0.3s;
+
+    z-index: 10;
+
+}
+
+.b-n-l-left li:hover>.download {
+    /* 
+        将高度还原，利用transition来控制改变
+            1.不能设置diaplay，这样transition就不生效
+            2.利用高度为零超出部分隐藏
+            3.利用鼠标放上去，还原高度来触发
+            4.动画也就跟上了
+     */
+    height: 148px;
+}
+
+.download img {
+
+    width: 90px;
+    height: 90px;
+    margin: 18px 17px 0;
+
+}
+
+.download p {
+    font-size: 14px;
+    height: 16px;
+    line-height: 16px;
+
+}
+
+
+.stri {
+    /* 做一个小三角 */
+    width: 0px;
+    height: 0px;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    margin-left: -8px;
+    z-index: 10;
+    display: none;
+
+}
+
+.b-n-l-left li:hover>.stri {
+    display: block;
+}
+
+.Shoppingcart {
+    width: 316px;
+
+    /* height: 78px; */
+    /* 隐藏 */
+    height: 0px;
+    /* 当高度不存在的情况下，影藏文字 */
+    overflow: hidden;
+    font-size: 12px;
+
+
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #ffff;
+    box-shadow: 0 1px 5px #aaa;
+    z-index: 10;
+    text-align: center;
+
+    /* 动画 */
+    transition: all 0.3s;
+}
+
+/* 显示购物车的下面的div */
+.Shoppingli:hover>.Shoppingcart {
+    height: 78px;
+    line-height: 78px;
+}
+
+.Shoppingli:hover {
+    background-color: #ffff;
+}
+
+.Shoppinga:hover>.iconfont {
+    color: #ff6700;
+}
+
+.Shoppinga:hover>.S-text {
+    color: #ff6700;
+}
+
+.Shoppingli {
+    width: 120px;
+    height: 40px;
+    margin-left: 20px;
+    text-align: center;
+    background-color: #424242;
+}
+
+.Shoppinga .iconfont-shopping {
+    font-size: 14px;
+    color: rgb(176, 176, 176);
+}
+
+.Shoppinga:hover>.S-text {
+    font-size: 12px;
+
+}
+
+/* 黑色导航栏结束 */
+
+
+
+
+
+
+
+
+
+
+
+
+/* 白色导航开始 */
+.white-nav {
+    width: 100%;
+    height: 100px;
+    /* 白色导航栏居中 */
+
+    background-color: white;
+}
+
+.white-nav-container {
+    width: 1226px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.white-nav-container a img {
+    width: 56px;
+    height: 56px;
+    line-height: 100px;
+    /* 图片浮动 放在最左边 */
+    position: absolute;
+    top: 22px;
+}
+
+.container-list {
+    width: 800px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.container-list ul {
+    width: 800px;
+    height: 100px;
+}
+
+.container-list ul li {
+    /* 只能浮动，定位会缩在一块 */
+    float: left;
+    height: 100px;
+    /* 文字居中 */
+    line-height: 100px;
+    padding-left: 20px;
+
+
+
+}
+
+.container-list ul li a {
+    height: 100px;
+    font-size: 16px;
+    font-family: "微软雅黑";
+
+}
+
+.list-group {
+    width: 1910px;
+    /* 设置高度为0 */
+    height: 0;
+    /* 溢出部分隐藏 */
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 1px 5px rgba(176, 176, 176, 0.5);
+    position: absolute;
+    left: -345px;
+    top: 100px;
+    /* 动画过渡 */
+    transition: all 0.3s;
+
+    z-index: 10;
+
+}
+
+.container-list ul li:hover>div {
+    height: 250px;
+}
+
+/* 浮动 然后间距打开 */
+.list-group div {
+    width: 180px;
+
+    float: left;
+    text-align: center;
+
+    /* border-right: 2px solid #f0f0f0; */
+
+}
+
+.list-group div:nth-child(1) {
+    margin-left: 388px;
+}
+
+.list-group>div>img {
+    margin-left: 20px;
+    margin-top: 50px;
+    /* 设置img的边框，美观 */
+    border-right: 2px solid #f0f0f0;
+}
+
+/* 
+    将最后一个边框去掉 美观
+        是最后一个div下的img标签 不是div下最后一个img标签
+ */
+.list-group>div:last-child>img {
+    border-right: none;
+}
+
+
+/* .list-group-v {
+    
+    float: left;
+    margin-top: 50px;
+    font-size: 100px;
+    font-weight: 100;
+    color: rgba(176, 176, 176, 0.1);
+} */
+.list-group div p {
+
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    margin-left: 20px;
+    margin-top: -30px;
+    padding-top: 0;
+
+}
+
+.list-group div span {
+    display: block;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 8px;
+    padding-top: 0;
+    font-family: "微软雅黑";
+    color: red;
+
+}
+
+.container-list ul li a:hover {
+    color: #ff6700;
+}
+
+
+.searchbar {
+    float: right;
+    margin-top: -80px;
+
+
+}
+
+.searchbar input {
+    width: 193px;
+    height: 52px;
+    margin-right: 0;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    border-right: 0;
+    padding-left: 10px;
+
+
+    /* 去掉选中时 出现的边框 */
+    outline: none;
+}
+
+.i-s-box {
+    display: block;
+    width: 52px;
+    height: 50px;
+    border: 1px solid #d9d9d9;
+    float: right;
+    margin-right: 0;
+    margin-top: -80px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.iconfont-search {
+    display: block;
+    font-weight: 100;
+    font-size: 20px !important;
+
+
+}
+
+.i-s-box:hover {
+    background-color: #ff6700;
+    color: #fff;
+}
+    /* .list-group-1{
+        z-index: 200;
+    }
+    .list-group-2{
+        z-index: 201;
+    }
+    .list-group-3{
+        z-index: 202;
+    }
+    .list-group-4{
+        z-index: 203;
+    }
+    .list-group-5{
+        z-index: 204;
+    }
+    .list-group-6{
+        z-index: 205;
+    }
+    .list-group-7{
+        z-index: 206;
+    }
+     */
+
+/* 白色导航结束 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 轮播列表 开始 */
+
+.carousel {
+    width: 1226px;
+    height: 460px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+/* 图片浮动(img在a标签里面，让a当成盒子浮动) */
+.carousel>a {
+    width: 1226px;
+    height: 460px;
+    display: block;
+    position: absolute;
+}
+
+/* .carousel>a>div>img{
+    position: absolute;
+    overflow: hidden;
+} */
+
+
+
+
+/* 有思路但是这里轮播要用其他代码，还没学 加油 */
+
+
+
+/* 做动画  首先得写animation动画样式 */
+/* .carousel>a>img{
+    background-image: none; */
+/* 动画样式 ： 动画名称  动画总时间  速率  延迟多长时间开始动画  循环次数  方向  播放状态 */
+/* animation: carousel 10s linear 0s infinite normal running;
+
+} */
+
+/* @keyframes carousel {
+    0%{
+        background-image: url("../images/Carousels/1.jpg");
+    }
+    20%{
+        background-image: url("../images/Carousels/2.webp");
+    }
+    40%{
+        background-image: url("../images/Carousels/3.webp");
+    }
+    60%{
+        background-image: url("../images/Carousels/4.webp");
+    }
+    80%{
+        background-image: url("../images/Carousels/5.webp");
+    }
+    100%{
+        background-image: url("../images/Carousels/6.webp");
+    }
+    
+
+} */
+
+
+/* 
+    文字也浮动(让列表浮动这样可以重叠)
+        浮动盒子
+            如果浮动ul就会让每行都挤在最左边
+            
+ */
+.carousel .carousel-list {
+    position: absolute;
+}
+
+.carousel-list {
+    width: 234px;
+    height: 460px;
+}
+
+.carousel-list ul {
+    width: 234px;
+    height: 460px;
+    list-style-type: none;
+
+    background-color: rgb(60, 60, 60);
+    padding-top: 20px;
+    box-sizing: border-box;
+
+
+}
+
+.carousel-list>ul>li {
+    width: 234px;
+    height: 42px;
+    line-height: 42px;
+    float: left;
+    /* 左内边距三十 */
+
+    padding-left: 30px;
+    box-sizing: border-box;
+
+}
+
+.carousel-list>ul>li>a {
+    font-size: 16px;
+    font-family: "微软雅黑";
+    color: white;
+    width: 234px;
+    height: 42px;
+}
+
+.carousel-list>ul>li>span {
+    color: white;
+    float: right;
+    margin-right: 20px;
+}
+
+.carousel-list>ul>li:hover {
+    background-color: #ff6700;
+}
+
+
+
+/* 这里开始设置窗口(滑动门) */
+
+.carousel-list-group {
+    width: 992px;
+    height: 460px;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+
+    /* 
+        此处出现你设置盒子阴影很淡的情况但是你看到的很深
+            原因是
+                你设置了好几个盒子一起都是同样的效果
+                    比如十个都是，那你的阴影淡a值.18就会变成1.8
+                        但是你要全部消失后触发鼠标移动才会显示，而显示只显示一个，
+                        所以你这个地方只能通过显示一个盒子来定rgba中a的值
+                            即 display=block的时候在会过来调试
+    */
+
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+    /* 不能让该盒子和左边列表重合 */
+    left: 234px;
+    /* 因为跟随li 所以距离顶部会有距离，我们设置top=o即可 */
+    top: 0;
+
+    /* 隐藏 */
+    display: none;
+}
+
+
+/* 触发才显示 */
+.carousel-list>ul>li:hover>.carousel-list-group {
+    display: block;
+}
+
+.carousel-list-group>a {
+    display: inline-block;
+    width: 240px;
+    height: 76px;
+    line-height: 76px;
+    box-sizing: border-box;
+    position: relative;
+
+}
+
+.carousel-list-group>a>img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    left: 20px;
+
+
+}
+
+.carousel-list-group>a>span {
+    padding-left: 70px;
+
+}
+
+.carousel-list-group>a:hover {
+    color: #ff6700;
+}
+
+
+/* 轮播列表 结束 */
+
+
+
+/* 广告部分 开始 */
+
+.advertisement {
+    width: 1226px;
+    height: 190px;
+    margin: 14PX auto 14PX auto;
+    /* background-color: #d9d9d9; */
+
+    clear: both;
+    overflow: hidden;
+}
+
+.advertisement>div {
+    width: 316px;
+    height: 170px;
+    float: left;
+    /* background-color: #424242; */
+    margin-left: 14px;
+}
+
+.advertisement>div:first-child {
+    width: 235px;
+    height: 170px;
+    margin-left: 0px;
+    /* background-color: rgb(95, 87, 80); */
+}
+
+.advertisement>div>ul {
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+
+}
+
+.advertisement>div>ul>li {
+    float: left;
+    width: 70px;
+    height: 82px;
+
+    padding: 0 3px;
+
+    text-align: center;
+
+    background-color: rgb(95, 87, 80);
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.advertisement>div>ul>li:nth-child(1) {
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+.advertisement>div>ul>li:nth-child(2) {
+    margin-top: 1px;
+
+}
+
+.advertisement>div>ul>li:nth-child(3) {
+    margin-top: 1px;
+}
+
+.advertisement>div>ul>li:nth-child(4) {
+    margin-left: 1px;
+}
+
+
+
+
+.advertisement>div>ul>li>a {
+    display: inline-block;
+    width: 70px;
+    height: 46px;
+    margin-top: 18px;
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s;
+}
+
+
+.advertisement>div>ul>li>a:hover {
+    color: white;
+
+}
+
+
+.advertisement>div>ul>li>a>span {
+
+    font-size: 24px;
+}
+
+.advertisement>div>ul>li>a>h5 {
+    padding-top: 5px;
+}
+
+.advertisement>div a img {
+    width: 316px;
+    height: 170px;
+}
+
+.advertisement>div a img:hover {
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.18);
+    transition: all 0.3s;
+}
+
+
+
+.mi-img-1 {
+    width: 1226px;
+
+    margin: 0 auto;
+}
+
+/* 广告部分 结束 */
+
+
+
+
+
+
+
+
+/* 手机部分 开始 */
+
+.phone {
+    width: 1226px;
+    height: 686px;
+    margin: 20px auto;
+
+}
+
+.phone-title {
+    width: 1226px;
+    height: 58px;
+    line-height: 58px;
+}
+
+.phone-title h3 {
+    font-family: "微软雅黑";
+    font-size: 20px;
+    font-weight: 200;
+    float: left;
+}
+
+.phone-title>a {
+    float: right;
+}
+
+.phone-title>a>p {
+    font-family: "微软雅黑";
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.phone-title>a>div {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    /* 设置line-height 居中 */
+    line-height: 18px;
+    border-radius: 50%;
+    background-color: gray;
+
+}
+
+.phone-title>a>div>span {
+    font-size: 12px;
+    font-weight: 800;
+    padding-left: 4px;
+    color: rgba(255, 255, 255, 0.5);
+
+}
+
+.phone-title>a:hover {
+    color: #ff6700;
+}
+
+.phone-title>a:hover>div {
+    background-color: #ff6700;
+}
+
+
+#phone-content { 
+    width: 1226px;
+    height: 628px;
+    /* background-color: antiquewhite; */
+    
+    display: grid;
+    grid-template-columns: repeat(5,234px);
+    grid-template-rows: repeat(2, 300px);
+    grid-template-areas:  "item1 item2 item3 item4 item5"
+                          "item1 item6 item7 item8 item9" ;
+    
+    row-gap: 14px;
+    column-gap: 14px;
+    
+}
+
+
+
+
+        /* 
+            使用grid-template-areas前
+            要给每个item定义一个名字(grid-area)
+        */
+        .item-1 {
+            grid-area:item1;
+            background-color: white;
+        }
+        .item-2 {
+            grid-area:item2;
+            background-color: white;
+        }
+        .item-3 {
+            grid-area:item3;
+            background-color: white;
+        }
+        .item-4 {
+            grid-area:item4;
+            background-color: white;
+        }
+        .item-5 {
+            grid-area:item5;
+            background-color: white;
+        }
+        .item-6 {
+            grid-area:item6;
+            background-color: white;
+        }
+        .item-7 {
+            grid-area:item7;
+            background-color: white;
+        }
+        .item-8 {
+            grid-area:item8;
+            background-color: white;
+        }
+        .item-9 {
+            grid-area:item9;
+            background-color: white;
+        }
+
+        /* 
+            整体设置结束
+        */
+
+#phone-content>.item{
+    text-align: center;
+    padding-top: 20px;
+
+    transition: all 0.2s linear;
+}
+
+#phone-content>.item:nth-child(1) {
+    padding-top: 0;
+}
+
+#phone-content>.item>a>img {
+    width: 160px;
+    height: 160px;
+}
+/* 第一个盒子下面的a标签下面的img图片 */
+#phone-content>.item:first-child>a>img {
+    width: 234px;
+    height: 614px;
+}
+#phone-content>.item>a>p {
+    font-family: "微软雅黑";
+    font-size: 14px;
+    
+    margin-top: 10px;
+}
+#phone-content>.item>a>span{
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: #b0b0b0;
+    
+    /* 
+        超出部分要隐藏，隐藏用点点点表示
+            但是这里你得设置宽度
+     */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    margin-top: 5px;
+    width: 214px;
+    /* 他是span标签，不能直接设置，所以得变换display */
+    display: inline-block;
+}
+
+
+
+#phone-content>.item>a>i{
+    display: inline-block;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #ff6700;
+    margin-top: 10px;
+}
+#phone-content>.item>a>del{
+    display: inline-block;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #b0b0b0;
+    margin-top: 10px;
+}
+#phone-content>.item:hover{
+    /* transform: translateY(-2px); */
+    transform: translate3d(0,-2px,0);
+
+    box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.1);
+    
+    
+}
+
+
+.mi-img-2 {
+    width: 1226px;
+    height: 120px;
+    margin: 0 auto 20px auto;
+}
+/* 手机部分 结束 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 页脚部分 开始 */
+
+
+.footer{
+    width: 100%;
+    height: 472.5px;
+    background-color: white;
+}
+
+/* 页脚上半部分 服务部分 开始 */
+.footer-service{
+    width: 1226px;
+    height: 80px;
+    /* background-color: antiquewhite; */
+    margin: 0 auto;
+
+    border-bottom: 1px solid rgb(224, 224, 224);
+    box-sizing: border-box;
+}
+
+.footer-service>div{
+    float: left;
+    width: 20%;
+    
+
+}
+.footer-service>div>a{
+    display: inline-block;
+    width: 100%;
+    margin: 27.5px 0px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    /* 本来是设置与父容器等高，这里为了美观加了个边框所以缩小了a的高度 */
+
+    border-right: 1px solid rgb(224, 224, 224);
+    box-sizing: border-box;
+}
+/* 最后一个去掉 美观 */
+.footer-service>div:last-child>a{
+    border: none;
+}
+.footer-service>div>a>i{
+    font-size: 18px;
+    
+    
+}
+
+.footer-service>div>a>span{
+    font-size: 18px;
+    padding-left: 5px;
+    font-family: "微软雅黑";
+    font-weight: 200;
+}
+
+.footer-service>div>a:hover{
+    color: #ff6700;
+    
+}
+
+
+
+
+/* 页脚上半部分 服务部分 结束 */
+
+/* 页脚下半部分 链接部分 开始 */
+
+    .footer-links{
+        width: 1226px;
+        height: 392.5px;
+        margin: 0 auto;
+    }
+
+    .footer-links>.links-left{
+        width: 80%;
+        height: 392.5px;
+        /* 左侧浮动 */
+        float: left;
+        /* background-color: #424242; */
+        
+    }
+    .footer-links>.links-left>dl{
+        /* 设置四个dl 浮动一下就可以了 */
+        float: left;
+        /* 占比1/4 */
+        width: 16.66%;
+        
+        margin-top: 40px;
+    }  
+    .footer-links>.links-left>dl:first-child{
+        margin-left: 160px;
+    }
+
+    .links-left>dl>dt{
+        
+        font-family: "微软雅黑";
+        font-size: 14px;
+        
+
+    }
+    .links-left>dl>dd{
+        
+        font-family: "微软雅黑";
+        font-size: 12px;
+        font-weight: 400;
+        color: #757575;
+        opacity: 0.7;
+        
+        padding-top: 10px;
+    }
+
+    /* 
+        这里这个不生效，我也不知道为什么，寻求大佬帮助
+            豆包说是优先级，但是我把上面的padding删了依旧不生效           
+     */
+
+    /* .links-left>dl>dd:first-child{
+        padding-top: 30px;
+    } */
+
+    /* 
+        相邻兄弟选择器就可以，
+        可能是因为first-child是需要紧跟着他的第一个就是dd才行
+    */
+        .links-left>dl>dt+dd{
+            padding-top: 30px;
+        }
+
+        .links-left>dl>dd>a:hover{
+            color: #ff6700;
+        }
+        .links-right{
+            width: 20%;
+            /* 右侧右浮动 */
+            float: right;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .links-right>.right-top{
+            width: 100%;
+            /* 为了美观设置一个高度 */
+            height: 80px;
+            /* 为了美观设置一个左边框 */
+            border-left: 1px solid rgb(224, 224, 224);
+        }
+
+        .links-right>.right-bottom{
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .links-right>.right-top>p{
+            font-family: "微软雅黑";
+            
+            font-size: 20px;
+            color: #ff6700;
+        }
+        .links-right>.right-top>span{
+            font-family: "微软雅黑";
+            font-size: 12px;  
+        }
+        .links-right>.right-top>div{
+            width: 120px;
+            height: 30px;
+            /* background-color: #ff6700; */
+            margin: 0 auto;
+            line-height: 30px;
+            
+            border: 1px solid #ff6700;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        .links-right>.right-top>div>a>.iconfont-rengongkefu{
+            color: #ff6700;
+        }
+        .links-right>.right-top>div>a>span{
+            font-family: "微软雅黑";
+            font-size: 12px;
+        }
+
+
+        .links-right>.right-bottom>p{
+            font-family: "微软雅黑";
+            
+            font-size: 20px;
+            color: #ff6700;
+        }
+        .links-right>.right-bottom>span{
+            font-family: "微软雅黑";
+            font-size: 12px;  
+            display: block;
+            margin-bottom: 5px;
+        }
+        .links-right>.right-bottom>.text1{
+            
+            width: 220px;
+            margin-left: 43px;
+            opacity: 0.7; 
+        }
+        .links-right>.right-bottom>.text2{
+            opacity: 0.7;
+            margin-left: 40px;
+        }
+
+        .links-right>.right-bottom>div{
+             width: 120px;
+            height: 30px;
+            /* background-color: #ff6700; */
+            margin: 0 auto;
+            line-height: 30px;
+            
+            border: 1px solid #ff6700;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+         .links-right>.right-bottom>div>a>.iconfont-rengongkefu{
+            color: #ff6700;
+        }
+        .links-right>.right-bottom>div>a>span{
+            font-family: "微软雅黑";
+            font-size: 12px;
+        }
+
+        .links-right>.right-top>div:hover{
+            background-color: #ff6700;
+            transition: all 0.3s;
+            
+        }
+        .links-right>.right-top>div:hover>a{
+            color: white;   
+        }
+        .links-right>.right-bottom>div:hover{
+            background-color: #ff6700;
+            transition: all 0.3s;
+            
+        }
+        
+        .links-right>.right-bottom>div:hover>a{
+            color: white;   
+            
+        }
+
+
+/* 页脚下半部分 链接部分 结束 */
+
+
+/* 页脚部分 结束 */
